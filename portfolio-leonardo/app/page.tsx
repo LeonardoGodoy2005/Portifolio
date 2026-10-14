@@ -290,6 +290,7 @@ export default function Home() {
         </div>
 
         
+
 <div className="projects-grid">
   {projects.map((project) => (
     <a
@@ -303,40 +304,28 @@ export default function Home() {
     >
       <div className="project-visual">
         {project.className === "project-nexus" && (
-          <div className="scanner-panel">
-            <div className="scanner-header">
-              <span className="scanner-status-dot" />
-              <span>NEXUS SCANNER</span>
-              <span className="scanner-live">VISUAL DEMO</span>
-            </div>
+          <div className="scanner-visual" aria-hidden="true">
+            <div className="scanner-ring scanner-ring-outer" />
+            <div className="scanner-ring scanner-ring-middle" />
+            <div className="scanner-ring scanner-ring-inner" />
+            <div className="scanner-cross scanner-cross-x" />
+            <div className="scanner-cross scanner-cross-y" />
+            <div className="scanner-sweep" />
+            <div className="scanner-core" />
 
-            <div className="scanner-line">
-              <span>HTTPS / TLS</span>
-              <span className="scanner-ok">● CHECK</span>
-            </div>
+            <span className="scanner-node scanner-node-1" />
+            <span className="scanner-node scanner-node-2" />
+            <span className="scanner-node scanner-node-3" />
+            <span className="scanner-node scanner-node-4" />
 
-            <div className="scanner-line">
-              <span>SECURITY HEADERS</span>
-              <span className="scanner-warning">● CHECK</span>
-            </div>
-
-            <div className="scanner-line">
-              <span>DOMAIN EXPOSURE</span>
-              <span className="scanner-neutral">● CHECK</span>
-            </div>
-
-            <div className="scanner-progress">
+            <div className="scanner-target">
               <span />
-            </div>
-
-            <div className="scanner-footer">
-              <span>SECURITY ANALYSIS</span>
-              <span>NXZ://001</span>
             </div>
           </div>
         )}
 
         <div className="project-visual-grid" />
+
         <div className="project-symbol">{project.symbol}</div>
         <div className="project-orbit" />
 
@@ -378,6 +367,7 @@ export default function Home() {
   Explorar todos os repositórios <span>↗</span>
 </a>
 </section>
+
 
 
 <section className="tech-section section-shell reveal" id="tecnologias">
