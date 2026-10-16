@@ -1637,3 +1637,387 @@ main {
     min-height: 230px;
   }
 }
+
+
+/* ========================================
+   NEXUS//ZERO — RADAR DE SEGURANÇA
+======================================== */
+
+.project-nexus .project-visual {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle, rgba(0, 255, 213, 0.09), transparent 60%),
+    linear-gradient(135deg, #101c20, #0c0c12);
+}
+
+.project-nexus .scanner-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 213, 0.08),
+    rgba(0, 10, 15, 0.8) 70%
+  );
+  box-shadow: 0 0 35px rgba(0, 255, 213, 0.1);
+  isolation: isolate;
+}
+
+.project-nexus .scanner-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(0, 255, 213, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project-nexus .scanner-ring-outer {
+  width: 88%;
+  height: 88%;
+  border-style: dashed;
+  animation: nexus-radar-rotate 25s linear infinite;
+}
+
+.project-nexus .scanner-ring-middle {
+  width: 65%;
+  height: 65%;
+}
+
+.project-nexus .scanner-ring-inner {
+  width: 36%;
+  height: 36%;
+  border-style: dashed;
+  animation: nexus-radar-rotate 15s linear infinite reverse;
+}
+
+.project-nexus .scanner-cross {
+  position: absolute;
+  background: rgba(0, 255, 213, 0.2);
+}
+
+.project-nexus .scanner-cross-x {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.project-nexus .scanner-cross-y {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+}
+
+.project-nexus .scanner-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 285deg,
+    rgba(0, 255, 213, 0.03) 320deg,
+    rgba(0, 255, 213, 0.45) 360deg
+  );
+  animation: nexus-radar-rotate 4s linear infinite;
+  pointer-events: none;
+}
+
+.project-nexus .scanner-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #00ffd5;
+  box-shadow: 0 0 12px #00ffd5, 0 0 28px rgba(0, 255, 213, 0.7);
+}
+
+.project-nexus .scanner-node {
+  position: absolute;
+  z-index: 2;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00ffd5;
+  box-shadow: 0 0 12px #00ffd5;
+  animation: nexus-radar-pulse 1.5s ease-in-out infinite alternate;
+}
+
+.project-nexus .scanner-node-1 {
+  top: 27%;
+  left: 65%;
+}
+
+.project-nexus .scanner-node-2 {
+  top: 65%;
+  left: 28%;
+  animation-delay: 0.4s;
+}
+
+.project-nexus .scanner-node-3 {
+  top: 72%;
+  left: 68%;
+  animation-delay: 0.8s;
+}
+
+.project-nexus .scanner-node-4 {
+  top: 35%;
+  left: 32%;
+  animation-delay: 0.6s;
+}
+
+.project-nexus .scanner-target {
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(0, 255, 213, 0.8);
+  transform: rotate(45deg);
+}
+
+.project-nexus .scanner-target span {
+  position: absolute;
+  inset: 5px;
+  background: #00ffd5;
+  box-shadow: 0 0 10px #00ffd5;
+}
+
+@keyframes nexus-radar-rotate {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+@keyframes nexus-radar-pulse {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 700px) {
+  .project-nexus .project-visual {
+    min-height: 250px;
+  }
+
+  .project-nexus .scanner-visual {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* CONTATO — ENCERRAMENTO IMERSIVO */
+
+.contact-section {
+  isolation: isolate;
+  min-height: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-color: rgba(183, 151, 255, 0.25);
+  background:
+    radial-gradient(
+      ellipse at 82% 25%,
+      rgba(143, 94, 220, 0.20),
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 10% 90%,
+      rgba(103, 70, 145, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #19151f, #100f15 75%);
+}
+
+.contact-grid-decoration {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(205, 184, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(205, 184, 255, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(90deg, transparent, black, transparent);
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-kicker {
+  margin: 48px 0 18px;
+  color: #c5adff;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.contact-section h2 {
+  max-width: 850px;
+  font-size: clamp(54px, 8vw, 100px);
+  line-height: 0.98;
+  letter-spacing: -6px;
+}
+
+.contact-description {
+  max-width: 450px;
+  margin-top: 26px;
+}
+
+.contact-button {
+  margin-top: 18px;
+}
+
+.contact-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 75px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-bottom-label {
+  color: #888194;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 4px;
+  color: #d7d0e2;
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0;
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    background 250ms ease,
+    color 250ms ease;
+}
+
+.contact-links a:hover {
+  transform: translateY(-4px);
+  color: #fff;
+  border-color: rgba(190, 160, 255, 0.55);
+  background: rgba(170, 135, 235, 0.10);
+}
+
+.contact-social-icon {
+  color: #c5adff;
+}
+
+@media (max-width: 700px) {
+  .contact-section {
+    min-height: auto;
+    padding: 45px 22px 25px;
+  }
+
+  .contact-kicker {
+    margin-top: 38px;
+    font-size: 9px;
+    line-height: 1.8;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(48px, 12vw, 68px);
+    letter-spacing: -3px;
+  }
+
+  .contact-bottom {
+    margin-top: 55px;
+  }
+
+  .contact-links {
+    gap: 9px;
+  }
+
+  .contact-links a {
+    padding: 11px;
+  }
+}
+
+/* NEXUS//ZERO — PALETA VIOLETA */
+
+.project-nexus .project-visual {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(151, 103, 235, 0.18),
+      transparent 65%
+    ),
+    linear-gradient(135deg, #191323, #0c0b11);
+}
+
+.project-nexus .scanner-visual {
+  border-color: rgba(190, 158, 255, 0.35);
+  background: radial-gradient(
+    circle,
+    rgba(151, 103, 235, 0.12),
+    rgba(12, 10, 18, 0.92) 72%
+  );
+  box-shadow: 0 0 40px rgba(151, 103, 235, 0.12);
+}
+
+.project-nexus .scanner-ring {
+  border-color: rgba(190, 158, 255, 0.38);
+}
+
+.project-nexus .scanner-cross {
+  background: rgba(190, 158, 255, 0.24);
+}
+
+.project-nexus .scanner-sweep {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 285deg,
+    rgba(151, 103, 235, 0.04) 320deg,
+    rgba(190, 158, 255, 0.52) 360deg
+  );
+}
+
+.project-nexus .scanner-core,
+.project-nexus .scanner-node,
+.project-nexus .scanner-target span {
+  background: #c5adff;
+  box-shadow:
+    0 0 12px rgba(197, 173, 255, 0.9),
+    0 0 28px rgba(151, 103, 235, 0.45);
+}
+
+.project-nexus .scanner-target {
+  border-color: rgba(197, 173, 255, 0.9);
+}
+

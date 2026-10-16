@@ -301,55 +301,40 @@ export default function Home() {
       onMouseMove={handleTilt}
       onMouseLeave={resetTilt}
     >
-      <div className="project-visual">
-        {project.className === "project-nexus" && (
-          <div className="scanner-panel">
-            <div className="scanner-header">
-              <span className="scanner-status-dot" />
-              <span>NEXUS SCANNER</span>
-              <span className="scanner-live">VISUAL DEMO</span>
-            </div>
-
-            <div className="scanner-line">
-              <span>HTTPS / TLS</span>
-              <span className="scanner-ok">● CHECK</span>
-            </div>
-
-            <div className="scanner-line">
-              <span>SECURITY HEADERS</span>
-              <span className="scanner-warning">● CHECK</span>
-            </div>
-
-            <div className="scanner-line">
-              <span>DOMAIN EXPOSURE</span>
-              <span className="scanner-neutral">● CHECK</span>
-            </div>
-
-            <div className="scanner-progress">
-              <span />
-            </div>
-
-            <div className="scanner-footer">
-              <span>SECURITY ANALYSIS</span>
-              <span>NXZ://001</span>
-            </div>
-          </div>
-        )}
-
-        <div className="project-visual-grid" />
-        <div className="project-symbol">{project.symbol}</div>
-        <div className="project-orbit" />
-
-        <div className="project-topline">
-          <span>PROJECT / {project.number}</span>
-          <span>↗</span>
-        </div>
-
-        <div className="project-bottomline">
-          <span>{project.category}</span>
-          <span className="project-mini-dot" />
-        </div>
+     <div className="project-visual">
+  {project.className === "project-nexus" ? (
+    <div className="scanner-visual" aria-hidden="true">
+      <div className="scanner-ring scanner-ring-outer" />
+      <div className="scanner-ring scanner-ring-middle" />
+      <div className="scanner-ring scanner-ring-inner" />
+      <div className="scanner-cross scanner-cross-x" />
+      <div className="scanner-cross scanner-cross-y" />
+      <div className="scanner-sweep" />
+      <div className="scanner-core" />
+      <span className="scanner-node scanner-node-1" />
+      <span className="scanner-node scanner-node-2" />
+      <span className="scanner-node scanner-node-3" />
+      <span className="scanner-node scanner-node-4" />
+      <div className="scanner-target">
+        <span />
       </div>
+    </div>
+  ) : (
+    <>
+      <div className="project-visual-grid" />
+      <div className="project-symbol">{project.symbol}</div>
+      <div className="project-orbit" />
+      <div className="project-topline">
+        <span>PROJECT / {project.number}</span>
+        <span>↗</span>
+      </div>
+      <div className="project-bottomline">
+        <span>{project.category}</span>
+        <span className="project-mini-dot" />
+      </div>
+    </>
+  )}
+</div>
 
       <div className="project-info">
         <div className="project-title-row">
@@ -423,48 +408,81 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact-section section-shell reveal" id="contato">
-        <div className="contact-orb" />
+      
+<section className="contact-section section-shell reveal" id="contato">
+  <div className="contact-orb" aria-hidden="true" />
+  <div className="contact-grid-decoration" aria-hidden="true" />
 
-        <div className="section-label">
-          <span>04</span> / PRÓXIMO CAPÍTULO
-        </div>
+  <div className="contact-content">
+    <div className="section-label">
+      <span>04</span> / O PRÓXIMO CAPÍTULO
+    </div>
 
-        <h2>
-          Vamos criar
-          <br />
-          algo <span className="gradient-text">relevante.</span>
-        </h2>
+    <p className="contact-kicker">UMA IDEIA PODE SER O COMEÇO DE TUDO.</p>
 
-        <p>
-          Estou aberto a conexões, oportunidades e projetos que me
-          desafiem a ir além.
-        </p>
+    <h2>
+      Vamos criar
+      <br />
+      algo <span className="gradient-text">relevante?</span>
+    </h2>
 
-        <a
-          href="mailto:leonardogodoy.dev@gmail.com"
-          className="button-primary contact-button"
-        >
-          Entrar em contato <span>↗</span>
-        </a>
+    <p className="contact-description">
+      Projetos, tecnologia, ideias ou oportunidades.
+      Se você tem algo em mente, vamos tirar do papel.
+    </p>
 
-        <div className="contact-links">
-          <a
-            href="https://github.com/LeonardoGodoy2005"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GITHUB ↗
-          </a>
-          <a
-            href="https://www.linkedin.com/in/leonardo-godoy-b56361300"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LINKEDIN ↗
-          </a>
-        </div>
-      </section>
+    <a
+      href="mailto:leonardogodoy.dev@gmail.com"
+      className="button-primary contact-button"
+    >
+      Vamos conversar <span>↗</span>
+    </a>
+  </div>
+
+  <div className="contact-bottom">
+    <span className="contact-bottom-label">ENCONTRE-ME TAMBÉM EM</span>
+
+    <div className="contact-links">
+      <a
+        href="https://wa.me/61981922625"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Conversar pelo WhatsApp"
+      >
+        <span className="contact-social-icon">↗</span>
+        WhatsApp
+      </a>
+
+      <a
+        href="https://www.instagram.com/therealgodoy/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span className="contact-social-icon">↗</span>
+        Instagram
+      </a>
+
+      <a
+        href="https://github.com/LeonardoGodoy2005"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span className="contact-social-icon">↗</span>
+        GitHub
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/leonardo-godoy-b56361300"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span className="contact-social-icon">↗</span>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
 
       <footer className="footer">
         <a href="#inicio" className="brand">
