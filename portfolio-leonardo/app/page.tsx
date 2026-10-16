@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, type MouseEvent } from "react";
@@ -72,7 +71,6 @@ const projects = [
     href: "https://github.com/LeonardoGodoy2005",
   },
 ];
-
 
 function handleTilt(event: MouseEvent<HTMLAnchorElement>) {
   const card = event.currentTarget;
@@ -183,6 +181,7 @@ export default function Home() {
             <a href="#projetos" className="button-primary">
               Explorar projetos <span>↗</span>
             </a>
+
             <a href="#sobre" className="button-ghost">
               Conhecer meu trabalho <span>↓</span>
             </a>
@@ -190,15 +189,21 @@ export default function Home() {
 
           <div className="hero-meta">
             <div>
-              <span className="meta-number">06<span>+</span></span>
+              <span className="meta-number">
+                06<span>+</span>
+              </span>
               <span className="meta-label">PROJETOS</span>
             </div>
+
             <div className="meta-divider" />
+
             <div>
               <span className="meta-number">WEB</span>
               <span className="meta-label">DESENVOLVIMENTO</span>
             </div>
+
             <div className="meta-divider" />
+
             <div>
               <span className="meta-number">DF</span>
               <span className="meta-label">BRASIL</span>
@@ -206,26 +211,27 @@ export default function Home() {
           </div>
         </div>
 
-    
-<div className="hero-art" aria-label="Objeto tridimensional interativo">
-  <Scene3D />
+        <div
+          className="hero-art"
+          aria-label="Objeto tridimensional interativo"
+        >
+          <Scene3D />
 
-  <div className="floating-label label-top">
-    <span className="label-dot" />
-    DIGITAL EXPERIENCE
-  </div>
+          <div className="floating-label label-top">
+            <span className="label-dot" />
+            DIGITAL EXPERIENCE
+          </div>
 
-  <div className="floating-label label-bottom">
-    <span className="label-index">01</span>
-    CREATING BEYOND LIMITS
-  </div>
+          <div className="floating-label label-bottom">
+            <span className="label-index">01</span>
+            CREATING BEYOND LIMITS
+          </div>
 
-  <div className="art-coordinate coordinate-one">-15.78°</div>
-  <div className="art-coordinate coordinate-two">47.92°</div>
-  <div className="art-cross cross-one">+</div>
-  <div className="art-cross cross-two">+</div>
-</div>
-
+          <div className="art-coordinate coordinate-one">-15.78°</div>
+          <div className="art-coordinate coordinate-two">47.92°</div>
+          <div className="art-cross cross-one">+</div>
+          <div className="art-cross cross-two">+</div>
+        </div>
 
         <a href="#sobre" className="scroll-indicator">
           <span className="scroll-line" />
@@ -276,6 +282,7 @@ export default function Home() {
             <div className="section-label">
               <span>02</span> / TRABALHOS SELECIONADOS
             </div>
+
             <h2>
               Ideias em
               <br />
@@ -289,83 +296,86 @@ export default function Home() {
           </p>
         </div>
 
-        
-<div className="projects-grid">
-  {projects.map((project) => (
-    <a
-      key={project.number}
-      href={project.href}
-      target="_blank"
-      rel="noreferrer"
-      className={`project-card ${project.className} reveal`}
-      onMouseMove={handleTilt}
-      onMouseLeave={resetTilt}
-    >
-     <div className="project-visual">
-  {project.className === "project-nexus" ? (
-    <div className="scanner-visual" aria-hidden="true">
-      <div className="scanner-ring scanner-ring-outer" />
-      <div className="scanner-ring scanner-ring-middle" />
-      <div className="scanner-ring scanner-ring-inner" />
-      <div className="scanner-cross scanner-cross-x" />
-      <div className="scanner-cross scanner-cross-y" />
-      <div className="scanner-sweep" />
-      <div className="scanner-core" />
-      <span className="scanner-node scanner-node-1" />
-      <span className="scanner-node scanner-node-2" />
-      <span className="scanner-node scanner-node-3" />
-      <span className="scanner-node scanner-node-4" />
-      <div className="scanner-target">
-        <span />
-      </div>
-    </div>
-  ) : (
-    <>
-      <div className="project-visual-grid" />
-      <div className="project-symbol">{project.symbol}</div>
-      <div className="project-orbit" />
-      <div className="project-topline">
-        <span>PROJECT / {project.number}</span>
-        <span>↗</span>
-      </div>
-      <div className="project-bottomline">
-        <span>{project.category}</span>
-        <span className="project-mini-dot" />
-      </div>
-    </>
-  )}
-</div>
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <a
+              key={project.number}
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              className={`project-card ${project.className} reveal`}
+              onMouseMove={handleTilt}
+              onMouseLeave={resetTilt}
+            >
+              <div className="project-visual">
+                {project.className === "project-nexus" && (
+                  <div className="scanner-visual" aria-hidden="true">
+                    <div className="scanner-ring scanner-ring-outer" />
+                    <div className="scanner-ring scanner-ring-middle" />
+                    <div className="scanner-ring scanner-ring-inner" />
+                    <div className="scanner-cross scanner-cross-x" />
+                    <div className="scanner-cross scanner-cross-y" />
+                    <div className="scanner-sweep" />
+                    <div className="scanner-core" />
 
-      <div className="project-info">
-        <div className="project-title-row">
-          <h3>{project.name}</h3>
-          <span className="project-arrow">↗</span>
-        </div>
+                    <span className="scanner-node scanner-node-1" />
+                    <span className="scanner-node scanner-node-2" />
+                    <span className="scanner-node scanner-node-3" />
+                    <span className="scanner-node scanner-node-4" />
 
-        <p>{project.description}</p>
+                    <div className="scanner-target">
+                      <span />
+                    </div>
+                  </div>
+                )}
 
-        <div className="project-tags">
-          {project.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
+                <div className="project-visual-grid" />
+                <div className="project-symbol">{project.symbol}</div>
+                <div className="project-orbit" />
+
+                <div className="project-topline">
+                  <span>PROJECT / {project.number}</span>
+                  <span>↗</span>
+                </div>
+
+                <div className="project-bottomline">
+                  <span>{project.category}</span>
+                  <span className="project-mini-dot" />
+                </div>
+              </div>
+
+              <div className="project-info">
+                <div className="project-title-row">
+                  <h3>{project.name}</h3>
+                  <span className="project-arrow">↗</span>
+                </div>
+
+                <p>{project.description}</p>
+
+                <div className="project-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </a>
           ))}
         </div>
-      </div>
-    </a>
-  ))}
-</div>
 
-<a
-  href="https://github.com/LeonardoGodoy2005"
-  target="_blank"
-  rel="noreferrer"
-  className="all-projects-link reveal"
->
-  Explorar todos os repositórios <span>↗</span>
-</a>
-</section>
+        <a
+          href="https://github.com/LeonardoGodoy2005"
+          target="_blank"
+          rel="noreferrer"
+          className="all-projects-link reveal"
+        >
+          Explorar todos os repositórios <span>↗</span>
+        </a>
+      </section>
 
-
-<section className="tech-section section-shell reveal" id="tecnologias">
+      <section
+        className="tech-section section-shell reveal"
+        id="tecnologias"
+      >
         <div className="section-label">
           <span>03</span> / FERRAMENTAS
         </div>
@@ -408,87 +418,94 @@ export default function Home() {
         </div>
       </section>
 
-      
-<section className="contact-section section-shell reveal" id="contato">
-  <div className="contact-orb" aria-hidden="true" />
-  <div className="contact-grid-decoration" aria-hidden="true" />
-
-  <div className="contact-content">
-    <div className="section-label">
-      <span>04</span> / O PRÓXIMO CAPÍTULO
-    </div>
-
-    <p className="contact-kicker">UMA IDEIA PODE SER O COMEÇO DE TUDO.</p>
-
-    <h2>
-      Vamos criar
-      <br />
-      algo <span className="gradient-text">relevante?</span>
-    </h2>
-
-    <p className="contact-description">
-      Projetos, tecnologia, ideias ou oportunidades.
-      Se você tem algo em mente, vamos tirar do papel.
-    </p>
-
-    <a
-      href="mailto:leonardogodoy.dev@gmail.com"
-      className="button-primary contact-button"
-    >
-      Vamos conversar <span>↗</span>
-    </a>
-  </div>
-
-  <div className="contact-bottom">
-    <span className="contact-bottom-label">ENCONTRE-ME TAMBÉM EM</span>
-
-    <div className="contact-links">
-      <a
-        href="https://wa.me/61981922625"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Conversar pelo WhatsApp"
+      <section
+        className="contact-section section-shell reveal"
+        id="contato"
       >
-        <span className="contact-social-icon">↗</span>
-        WhatsApp
-      </a>
+        <div className="contact-orb" aria-hidden="true" />
+        <div className="contact-grid-decoration" aria-hidden="true" />
 
-      <a
-        href="https://www.instagram.com/therealgodoy/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <span className="contact-social-icon">↗</span>
-        Instagram
-      </a>
+        <div className="contact-content">
+          <div className="section-label">
+            <span>04</span> / O PRÓXIMO CAPÍTULO
+          </div>
 
-      <a
-        href="https://github.com/LeonardoGodoy2005"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <span className="contact-social-icon">↗</span>
-        GitHub
-      </a>
+          <p className="contact-kicker">
+            UMA IDEIA PODE SER O COMEÇO DE TUDO.
+          </p>
 
-      <a
-        href="https://www.linkedin.com/in/leonardo-godoy-b56361300"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <span className="contact-social-icon">↗</span>
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</section>
+          <h2>
+            Vamos criar
+            <br />
+            algo <span className="gradient-text">relevante?</span>
+          </h2>
 
+          <p className="contact-description">
+            Projetos, tecnologia, ideias ou oportunidades.
+            Se você tem algo em mente, vamos tirar do papel.
+          </p>
+
+          <a
+            href="mailto:leonardogodoy.dev@gmail.com"
+            className="button-primary contact-button"
+          >
+            Vamos conversar <span>↗</span>
+          </a>
+        </div>
+
+        <div className="contact-bottom">
+          <span className="contact-bottom-label">
+            ENCONTRE-ME TAMBÉM EM
+          </span>
+
+          <div className="contact-links">
+            <a
+              href="https://wa.me/61981922625"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Conversar pelo WhatsApp"
+            >
+              <span className="contact-social-icon">↗</span>
+              WhatsApp
+            </a>
+
+            <a
+              href="https://www.instagram.com/therealgodoy/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="contact-social-icon">↗</span>
+              Instagram
+            </a>
+
+            <a
+              href="https://github.com/LeonardoGodoy2005"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="contact-social-icon">↗</span>
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/leonardo-godoy-b56361300"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="contact-social-icon">↗</span>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
 
       <footer className="footer">
         <a href="#inicio" className="brand">
           LG<span>.</span>
         </a>
+
         <span>DESENHADO E DESENVOLVIDO POR LEONARDO GODOY</span>
+
         <a href="#inicio" className="back-top">
           VOLTAR AO TOPO ↑
         </a>
